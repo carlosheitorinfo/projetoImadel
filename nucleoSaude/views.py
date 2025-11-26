@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .models import Medicos
 from .models import Pacientes
+from .models import Prontuario
 from .forms import ContatoModelForm
 from .forms import AgendamentoModelForm
 from django.contrib import messages
@@ -28,6 +29,14 @@ def Pacientes(request):
         'pacientes' : Pacientes
     }
     return render(request,'pacientes.html',context)
+
+@login_required
+def Prontuario(request):
+    medico = Prontuario.objects.filter(ativo=True)
+    context = {
+        'prontuario' : Prontuario
+    }
+    return render(request,'prontuario.html',context)
 
 @login_required
 def formulario_agendamento_view(request):

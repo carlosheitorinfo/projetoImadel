@@ -11,15 +11,15 @@ class MedicosAdmin(admin.ModelAdmin):
 
 @admin.register(Pacientes)
 class PacientesAdmin(admin.ModelAdmin):
-    list_display = ('nome_paciente', 'prontuario', 'data_nascimento', 'telefone', 'endereco', 'email')
-    list_filter = ('nome_paciente', 'prontuario', 'data_nascimento')
-    search_fields = ('nome_paciente', 'prontuario', 'data_nascimento')
+    list_display = ('nome_paciente', 'numero_prontuario', 'data_nascimento', 'telefone', 'endereco', 'email')
+    list_filter = ('nome_paciente', 'numero_prontuario', 'data_nascimento')
+    search_fields = ('nome_paciente', 'numero_prontuario', 'data_nascimento')
 
 @admin.register(Agendamento)
 class AgendamentoAdmin(admin.ModelAdmin):
-    list_display = ('nome_paciente', 'prontuario', 'data_consulta', 'nome_medico')
-    list_filter = ('nome_paciente', 'prontuario', 'data_consulta', 'nome_medico')
-    search_fields = ('nome_paciente', 'prontuario', 'data_consulta', 'nome_medico')
+    list_display = ('nome_paciente', 'numero_prontuario', 'data_consulta', 'nome_medico')
+    list_filter = ('nome_paciente', 'numero_prontuario', 'data_consulta', 'nome_medico')
+    search_fields = ('nome_paciente', 'numero_prontuario', 'data_consulta', 'nome_medico')
 
 @admin.register(MensagemContato)
 class MensagemContatoAdmin(admin.ModelAdmin):
