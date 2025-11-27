@@ -24,7 +24,7 @@ from nucleoSaude import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('nucleoSaude.urls')),
-    path('', views.home, name='home'),
+    # path('', views.home, name='home'),
  
 ]
 

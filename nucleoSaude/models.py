@@ -18,8 +18,8 @@ class Medicos(models.Model):
         return self.nome_medico
     
 class Pacientes(models.Model):
+    numero_prontuario = models.PositiveIntegerField(unique=True, primary_key=True)
     nome_paciente = models.CharField(max_length=100)
-    numero_prontuario = models.PositiveIntegerField()
     data_nascimento = models.DateField()
     endereco = models.CharField(max_length=200)
     email = models.EmailField(max_length=100)
@@ -35,7 +35,7 @@ class Pacientes(models.Model):
 
 class Agendamento(models.Model):
     nome_paciente = models.CharField(max_length=100)
-    numero_prontuario = models.PositiveIntegerField()
+    numero_prontuario = models.ForeignKey(Pacientes)
     data_consulta = models.DateField(max_length=100)
     nome_medico = models.CharField(max_length=100)
     ativo = models.BooleanField(default=True)

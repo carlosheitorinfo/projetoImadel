@@ -2,8 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
+urlpatterns = [    
     path('',views.home, name='home'),
     path('agenda/',views.Agenda, name='agenda'),
     path('agendar/',views.formulario_agendamento_view, name='agendar'),

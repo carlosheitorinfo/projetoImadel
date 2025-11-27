@@ -18,7 +18,7 @@ def home(request):
 def Medicos(request):
     medico = Medicos.objects.filter(ativo=True)
     context = {
-        'medicos' : Medicos
+        'medicos' : medico
     }
     return render(request,'medicos.html',context)
 
@@ -26,15 +26,15 @@ def Medicos(request):
 def Pacientes(request):
     pacientes = Pacientes.objects.filter(ativo=True)
     context = {
-        'pacientes' : Pacientes
+        'paciente' : pacientes
     }
     return render(request,'pacientes.html',context)
 
 @login_required
 def Prontuario(request):
-    medico = Prontuario.objects.filter(ativo=True)
+    prontuarios = Prontuario.objects.filter(ativo=True)
     context = {
-        'prontuario' : Prontuario
+        'prontuario' : prontuarios
     }
     return render(request,'prontuario.html',context)
 
